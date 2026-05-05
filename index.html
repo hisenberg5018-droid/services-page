@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Washing Pro — خدمات الغسيل الاحترافي</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: #eef2f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px;
+  min-height: 100vh;
+}
+.page {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  margin-bottom: 0;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #07224a 0%, #103d7e 55%, #1565c0 100%);
+  padding: 36px 44px 44px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content:''; position:absolute; top:-80px; left:-80px;
+  width:320px; height:320px; border-radius:50%;
+  background:rgba(255,255,255,0.04);
+}
+.hero::after {
+  content:''; position:absolute; bottom:-50px; right:100px;
+  width:220px; height:220px; border-radius:50%;
+  background:rgba(21,101,192,0.25);
+}
+
+.hero-top {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:28px; position:relative; z-index:2;
+}
+.logo-wrap {
+  display:flex; align-items:center; gap:14px;
+}
+.logo-img {
+  width:70px; height:70px; object-fit:contain;
+  background:#fff; border-radius:16px; padding:6px;
+  box-shadow:0 4px 18px rgba(0,0,0,0.25);
+}
+.brand-text .name {
+  font-family:'Cairo',sans-serif; color:#fff;
+  font-size:21px; font-weight:800; line-height:1.2;
+}
+.brand-text .sub {
+  color:rgba(255,255,255,0.55); font-size:11px;
+  letter-spacing:2px; text-transform:uppercase;
+}
+.hero-badge {
+  background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.22);
+  color:rgba(255,255,255,0.85); font-size:11px; padding:6px 16px;
+  border-radius:20px; letter-spacing:1px; white-space:nowrap;
+}
+
+.hero-body { position:relative; z-index:2; }
+.hero-label {
+  color:rgba(255,255,255,0.5); font-size:11px; letter-spacing:3px;
+  text-transform:uppercase; margin-bottom:7px;
+}
+.hero-role {
+  font-family:'Cairo',sans-serif; color:#fff;
+  font-size:30px; font-weight:900; margin-bottom:5px; line-height:1.15;
+}
+.hero-role-en {
+  color:#64b5f6; font-size:15px; margin-bottom:22px;
+}
+.hero-line { width:55px; height:3px; background:linear-gradient(90deg,#64b5f6,transparent); border-radius:2px; margin-bottom:20px; }
+.hero-desc {
+  color:rgba(255,255,255,0.78); font-size:14px; line-height:1.85;
+  max-width:430px; font-weight:300;
+}
+
+/* ===== DIVIDER ===== */
+.wave { background:#07224a; line-height:0; }
+.wave svg { display:block; width:100%; }
+
+/* ===== SECTIONS ===== */
+.sec { padding:28px 40px; }
+.sec-hd {
+  display:flex; align-items:center; gap:10px; margin-bottom:20px;
+}
+.sec-dot { width:7px; height:7px; background:#1565c0; border-radius:50%; flex-shrink:0; }
+.sec-title {
+  font-family:'Cairo',sans-serif; font-size:18px; font-weight:700; color:#07224a;
+}
+.sec-rule { flex:1; height:1px; background:linear-gradient(90deg,#dde6f5,transparent); }
+
+/* ===== SERVICES GRID ===== */
+.svc-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+}
+.svc-card {
+  background:#f5f8ff; border:1px solid #dde6f5;
+  border-radius:10px; padding:16px 14px; text-align:center;
+}
+.svc-ic {
+  width:42px; height:42px; border-radius:10px;
+  background:linear-gradient(135deg,#e8f0fe,#cddcff);
+  display:flex; align-items:center; justify-content:center; margin:0 auto 9px;
+}
+.svc-ic svg { width:22px; height:22px; }
+.svc-n { font-size:13px; font-weight:700; color:#07224a; margin-bottom:3px; }
+.svc-d { font-size:11px; color:#6b7a99; line-height:1.5; }
+
+/* ===== WHY ===== */
+.why-sec { background:#f5f8ff; border-top:1px solid #dde6f5; border-bottom:1px solid #dde6f5; padding:26px 40px; }
+.why-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+.why-row { display:flex; align-items:flex-start; gap:10px; }
+.why-chk {
+  width:20px; height:20px; background:#1565c0; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;
+}
+.why-chk svg { width:11px; height:11px; }
+.why-t strong { display:block; font-size:12.5px; font-weight:700; color:#07224a; margin-bottom:2px; }
+.why-t span { font-size:11px; color:#6b7a99; line-height:1.4; }
+
+/* ===== PRICES ===== */
+.price-sec { padding:26px 40px; }
+.price-cat { margin-bottom:22px; }
+.cat-label {
+  font-family:'Cairo',sans-serif; font-size:13px; font-weight:700;
+  color:#1565c0; border-bottom:2px solid #dde6f5; padding-bottom:7px; margin-bottom:10px;
+  display:flex; align-items:center; gap:6px;
+}
+.cat-label::before { content:''; width:10px; height:10px; background:#1565c0; border-radius:3px; }
+.price-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+.price-grid.cols3 { grid-template-columns:repeat(3,1fr); }
+.price-grid.cols5 { grid-template-columns:repeat(5,1fr); }
+.price-grid.cols6 { grid-template-columns:repeat(6,1fr); }
+.p-item {
+  background:#fff; border:1px solid #dde6f5; border-radius:8px;
+  padding:11px 7px; text-align:center;
+}
+.p-item .pn { font-size:10.5px; color:#6b7a99; margin-bottom:5px; line-height:1.3; }
+.p-item .pv { font-family:'Cairo',sans-serif; font-size:16px; font-weight:900; color:#1565c0; }
+.p-item .pu { font-size:9px; color:#9aabcc; }
+
+.vat-note {
+  margin-top:14px; text-align:center; font-size:12px; font-weight:700;
+  color:#c0392b; padding:9px 14px; background:#fff5f5;
+  border:1px solid #fcd0cf; border-radius:7px; line-height:1.6;
+}
+.stain-note {
+  margin-top:8px; text-align:center; font-size:11px;
+  color:#7a5200; padding:8px 14px; background:#fffbf0;
+  border:1px solid #ffe5a0; border-radius:7px; line-height:1.55;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background:linear-gradient(135deg,#07224a 0%,#103d7e 100%);
+  padding:32px 40px 28px; position:relative; overflow:hidden;
+}
+.footer::before {
+  content:''; position:absolute; bottom:-100px; right:-80px;
+  width:280px; height:280px; border-radius:50%;
+  background:rgba(255,255,255,0.03);
+}
+.footer-grid { display:grid; grid-template-columns:auto 1fr; gap:32px; align-items:center; position:relative; z-index:2; }
+.qr-blk { display:flex; flex-direction:column; align-items:center; gap:9px; }
+.qr-box { background:#fff; padding:11px; border-radius:12px; box-shadow:0 6px 22px rgba(0,0,0,0.3); }
+.qr-box img { width:110px; height:110px; display:block; }
+.qr-lbl { color:rgba(255,255,255,0.5); font-size:9.5px; text-align:center; letter-spacing:1px; }
+
+.ct-title { font-family:'Cairo',sans-serif; color:#fff; font-size:17px; font-weight:700; margin-bottom:4px; }
+.ct-sub { color:rgba(255,255,255,0.45); font-size:11px; margin-bottom:18px; }
+.ct-list { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.ct-list li { display:flex; align-items:center; gap:9px; color:rgba(255,255,255,0.82); font-size:13px; }
+.ct-ic {
+  width:28px; height:28px; background:rgba(255,255,255,0.1); border-radius:7px;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.ct-ic svg { width:14px; height:14px; }
+
+.footer-bot {
+  margin-top:22px; padding-top:18px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  display:flex; justify-content:space-between; align-items:center;
+  position:relative; z-index:2;
+}
+.footer-copy { color:rgba(255,255,255,0.35); font-size:10px; }
+.footer-brand { color:rgba(255,255,255,0.55); font-size:12px; font-weight:800; letter-spacing:2px; }
+
+@media (max-width:600px){
+  .svc-grid { grid-template-columns:repeat(2,1fr); }
+  .price-grid, .price-grid.cols5, .price-grid.cols6 { grid-template-columns:repeat(3,1fr); }
+  .hero { padding:26px 22px 32px; }
+  .sec, .why-sec, .price-sec, .footer { padding-left:22px; padding-right:22px; }
+  .footer-grid { grid-template-columns:1fr; text-align:center; }
+  .qr-blk { align-items:center; }
+}
+@media print {
+  body { background:none; padding:0; }
+  .page { box-shadow:none; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-top">
+    <div class="logo-wrap">
+      <img class="logo-img" src="data:image/jpeg;base64,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fcvtoQw/oAAAAAAAAAAAAAAAAAFcM4QLle7mAxPdVH7C38qgAAAAAAAAAAAAAAAAAeZUAIJOnFg0YKQLUOOFwAAAAAAAAAAAAAAAAABKSC4BDdxgIQLqgG3crQAAAAAAAAAAAAAAAAAAEpX3n1vttkAAfqnWwFUQAAAAAAAAAAAAAAAAAAAIeENWncSQMTWQFagwYQgAAAAAAAAAAAAAAAAAAEAMQ0AkgAAIFpgG9mmgAAAAAAAAAAAAAAAAAAAAIHlT7bKjhAVwEmosAAAAAAAAAAAAAAAAAAAAAAAEiKBziBhf24nQQAAAAAAAAAAAAAAAAAAAAAAAAAMIh+/UqLqsMoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEggEMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACAAMAAAAQU8888888888888888888888888888888888888U8888888888888888888888888888888888888U8888888888888888888888888888888888888U888888888888888885w088888888888888888U888888888884w084y3aU88888888888888888U8888888888882z84PYNc88888888888888888U88888888888oeEwB8p2T88888888888888888U88888888888swca23y2CCI888888888888888U8888888888g5tU2gY5UTeh888888888888888U8888888888zRn8sMM9/2OBiY8888888888888U8888888888LU8wD6GAIJsyzE8888888888888U888888888856UfyaRsr9tSlw+088888888888U888888888iMVSXxKK1bD1n7PQ788888888888U888888888WuVvwOVd3W8+39eFC88888888888U888888888e2iEaVn4bKBF+4Ohb88888888888U888888888sIPxt/fsX5wlDf7ZM84c88888888U88888888888JhemkEQMR8VxcN884V88888888U8888888888mxKjn4VgMMMC4DcM8sU88888888U888888888YtAdiZc8888c1sNCv88U88888888U888888884GwysNj8eAAoPGy9sM88888888888U88888888614QNyx/I/meoHCc8c88888888888U888888887uIhz1z5g29gwB64c6MM088888888U88888888+Axyv3VqquLaJviChyn2c88888888U888888884BIo8+0KbeS3kcu0BDD/c88888888U888888886EZq886GvtzsqMUIoLbke88888888U88888888udgc0zP6ZcLmbG8N2/tRc88888888U888888884FHXcoM1C8vXRW8MnVxc888888888U888888886eklmGlZiQzceeNffvb8888888888U888888888jGtqT7+t8pD/sFf87++888888888U888888888452N8auc88sWe+lLge8888888888U88888888884BQCCo6GED79trecc8888888888U88888888888OfB+eYaIR+X3j8888888888888U8888888888888aVHEmkTO8us8888888888888U888888888888888eecscc8888888888888888U8888888888888888888888888888888888888U8888888888888888888888888888888888888U8888888888888888888888888888888888888U8888888888888888888888888888888888888U8888888888888888888888888888888888888U8888888888888888888888888888888888888/8QALxEAAQMCBgEDAwQCAwAAAAAAAQACAwQRBRASITAxE0FQUSJAYRQVMnEgIyQzQ//aAAgBAgEBPwA+zH2Y+zH2Y/YgXNgmUDy3UntLDY/ZnkKjhfINk5pYbHON2lwKZVRlvancHPJH2Z5aasbELEKZ4kfqGVs91Y/ZHnjAc4ApsEYbaynYGvICDS4gBQULWgOcjBERayq6PxfUOvsTy7ZA2NwhXSabIuLjcqkAMgXW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" alt="Washing Pro Logo"/>
+      <div class="brand-text">
+        <div class="name">Washing Pro</div>
+        <div class="sub">Company Limited</div>
+      </div>
+    </div>
+    <div class="hero-badge">✦ المدينة المنورة</div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-label">الشريك الأول للمنشآت الكبرى في المدينة المنورة</div>
+    <div class="hero-role">مندوب مبيعات</div>
+    <div class="hero-role-en">Sales Representative — Washing Pro</div>
+    <div class="hero-line"></div>
+    <div class="hero-desc">
+      مغسلة صناعية عملاقة في المدينة المنورة — نخدم الفنادق والمطاعم والنوادي<br>والمستشفيات والمنشآت الكبرى بأحدث التقنيات وأفضل المواد الكيميائية المتخصصة.
+    </div>
+  </div>
+</div>
+
+<div class="wave">
+  <svg viewBox="0 0 800 38" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="38">
+    <path d="M0,0 L800,0 L800,14 Q600,42 400,18 Q200,-6 0,18 Z" fill="#07224a"/>
+    <path d="M0,18 Q200,-6 400,18 Q600,42 800,14 L800,38 L0,38 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- SERVICES -->
+<div class="sec">
+  <div class="sec-hd">
+    <div class="sec-dot"></div>
+    <div class="sec-title">نغسل كل شيء — باحترافية لا تُضاهى</div>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+      <div class="svc-n">مفروشات السرير</div>
+      <div class="svc-d">شرشف، لحاف، مخدة — نظافة فندقية في كل قطعة</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="1.8" stroke-linecap="round"><path d="M7 22V4a2 2 0 012-2h6a2 2 0 012 2v18M5 22h14"/></svg></div>
+      <div class="svc-n">المناشف والأردية</div>
+      <div class="svc-d">نضمن بياضاً ونعومة كأنها جديدة</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6"/></svg></div>
+      <div class="svc-n">ملابس المطبخ</div>
+      <div class="svc-d">زي نظيف ومعقم لفريق المطبخ دائماً</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="1.8" stroke-linecap="round"><path d="M3 14l4-8 5 5 3-5 4 8H3z"/></svg></div>
+      <div class="svc-n">الستائر والسجاد</div>
+      <div class="svc-d">إزالة الأتربة والبقع من أصعب الأقمشة</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="10" r="5"/><path d="M5 21c0-3.31 3.13-6 7-6s7 2.69 7 6"/></svg></div>
+      <div class="svc-n">الملابس الرسمية</div>
+      <div class="svc-d">بدل وثياب وعبايات — تنظيف جاف احترافي</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16v4H4zM4 12h16v4H4z"/><circle cx="8" cy="20" r="1"/><circle cx="16" cy="20" r="1"/></svg></div>
+      <div class="svc-n">مفروشات المطعم</div>
+      <div class="svc-d">طاولاتكم تعكس مستوى مطعمكم</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<div class="why-sec">
+  <div class="sec-hd">
+    <div class="sec-dot"></div>
+    <div class="sec-title">ما يجعلنا الخيار الأول</div>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-row">
+      <div class="why-chk"><svg viewBox="0 0 11 11" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 5.5l3 3 5-5"/></svg></div>
+      <div class="why-t"><strong>نخدم الجميع بمعيار واحد: الامتياز</strong><span>فنادق فاخرة، مطاعم، نوادي، مستشفيات، شركات</span></div>
+    </div>
+    <div class="why-row">
+      <div class="why-chk"><svg viewBox="0 0 11 11" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 5.5l3 3 5-5"/></svg></div>
+      <div class="why-t"><strong>استلام وتسليم من عندكم</strong><span>نأتي إليكم — لا تكلفوا أنفسكم بالتنقل</span></div>
+    </div>
+    <div class="why-row">
+      <div class="why-chk"><svg viewBox="0 0 11 11" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 5.5l3 3 5-5"/></svg></div>
+      <div class="why-t"><strong>مختبر كيميائي داخل مصنعنا</strong><span>نستخدم أفضل المواد العالمية لإزالة أعند البقع</span></div>
+    </div>
+    <div class="why-row">
+      <div class="why-chk"><svg viewBox="0 0 11 11" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 5.5l3 3 5-5"/></svg></div>
+      <div class="why-t"><strong>أسعار لا تجدها في السوق</strong><span>عقود مرنة تناسب أي حجم — من غرفة لألف غرفة</span></div>
+    </div>
+    <div class="why-row">
+      <div class="why-chk"><svg viewBox="0 0 11 11" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 5.5l3 3 5-5"/></svg></div>
+      <div class="why-t"><strong>تسليم منظم وفي الموعد</strong><span>نلتزم بجداول التسليم بدقة صارمة</span></div>
+    </div>
+    <div class="why-row">
+      <div class="why-chk"><svg viewBox="0 0 11 11" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 5.5l3 3 5-5"/></svg></div>
+      <div class="why-t"><strong>قلب المدينة المنورة — خدمة فورية</strong><span>مغسلتنا في قلب المدينة لضمان أسرع وقت استجابة</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ALL PRICES -->
+<div class="price-sec">
+  <div class="sec-hd">
+    <div class="sec-dot"></div>
+    <div class="sec-title">قائمة الأسعار الكاملة</div>
+    <div class="sec-rule"></div>
+  </div>
+
+  <!-- مفروشات السرير -->
+  <div class="price-cat">
+    <div class="cat-label">مفروشات السرير — Bed Linen</div>
+    <div class="price-grid cols5">
+      <div class="p-item"><div class="pn">كيس مخدة<br>Pillow case</div><div class="pv">0.30</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">شرشف سرير صغير<br>Bed sheet Single</div><div class="pv">1.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">شرشف سرير كبير<br>Bed sheet King</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">ديكور سرير صغير<br>Bed Skirting Sm</div><div class="pv">1.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">ديكور سرير كبير<br>Bed Skirting Lg</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+    </div>
+  </div>
+
+  <!-- كيس لحاف -->
+  <div class="price-cat">
+    <div class="cat-label">أغطية اللحاف — Duvet Covers</div>
+    <div class="price-grid cols3">
+      <div class="p-item"><div class="pn">كيس لحاف صغير<br>Duvet Cover Single</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">كيس لحاف كبير<br>Duvet Cover King</div><div class="pv">2.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">واقي مرتبة صغير<br>Mattress Prot. Sm</div><div class="pv">1.35</div><div class="pu">ريال</div></div>
+    </div>
+  </div>
+
+  <!-- لحاف -->
+  <div class="price-cat">
+    <div class="cat-label">اللحاف — Duvet</div>
+    <div class="price-grid cols3">
+      <div class="p-item"><div class="pn">لحاف صغير<br>Duvet Single</div><div class="pv">2.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">لحاف وسط<br>Duvet Medium</div><div class="pv">2.75</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">لحاف كبير<br>Duvet King</div><div class="pv">3.00</div><div class="pu">ريال</div></div>
+    </div>
+  </div>
+
+  <!-- بطانية -->
+  <div class="price-cat">
+    <div class="cat-label">البطانيات والوسائد — Blankets & Pillows</div>
+    <div class="price-grid cols5">
+      <div class="p-item"><div class="pn">بطانية صغيرة<br>Blanket Small</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">بطانية وسط<br>Blanket Medium</div><div class="pv">2.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">بطانية كبيرة<br>Blanket Big</div><div class="pv">3.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">مخدة صغيرة<br>Pillow Small</div><div class="pv">0.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">مخدة<br>Pillow Medium</div><div class="pv">1.10</div><div class="pu">ريال</div></div>
+    </div>
+  </div>
+
+  <!-- مناشف -->
+  <div class="price-cat">
+    <div class="cat-label">المناشف والحمام — Towels & Bath</div>
+    <div class="price-grid cols6">
+      <div class="p-item"><div class="pn">منشفة وجه<br>Face Towel</div><div class="pv">0.40</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">منشفة يد<br>Hand Towel</div><div class="pv">0.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">منشفة حمام<br>Bath Towel</div><div class="pv">1.10</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">دواسة حمام<br>Bath Mate</div><div class="pv">0.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">روب حمام<br>Bathrobe</div><div class="pv">2.20</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">ستارة دش<br>Shower Curtain</div><div class="pv">1.40</div><div class="pu">ريال</div></div>
+    </div>
+  </div>
+
+  <!-- مطعم -->
+  <div class="price-cat">
+    <div class="cat-label">مفروشات المطعم — Restaurant Linen</div>
+    <div class="price-grid">
+      <div class="p-item"><div class="pn">مفرش طاولة كبير<br>Tablecloth Lg</div><div class="pv">2.10</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">مفرش طاولة صغير<br>Tablecloth Sm</div><div class="pv">1.80</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">منديل طعام كبير<br>Food Napkin Lg</div><div class="pv">0.35</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">منديل طعام صغير<br>Food Napkin Sm</div><div class="pv">0.25</div><div class="pu">ريال</div></div>
+    </div>
+  </div>
+
+  <!-- أغطية وكراسي -->
+  <div class="price-cat">
+    <div class="cat-label">الأغطية والكراسي — Covers & Seating</div>
+    <div class="price-grid cols5">
+      <div class="p-item"><div class="pn">غطاء كرسي<br>Chair Cover</div><div class="pv">1.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">غطاء كرسي مخمل<br>Velvet Chair Cover</div><div class="pv">1.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">غطاء كنب صغير<br>Sofa Cover Sm</div><div class="pv">2.25</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">غطاء كنب كبير<br>Sofa Cover Lg</div><div class="pv">2.75</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">غطاء عربة<br>Kart Cover</div><div class="pv">3.50</div><div class="pu">ريال</div></div>
+    </div>
+  </div>
+
+  <!-- مخدات كنب ومراتب -->
+  <div class="price-cat">
+    <div class="cat-label">مخدات الكنب والمراتب — Sofa Cushions & Mattress</div>
+    <div class="price-grid cols5">
+      <div class="p-item"><div class="pn">مخدة كنب صغير<br>Sofa Cushion Sm</div><div class="pv">1.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">مخدة كنب كبير<br>Sofa Cushion Lg</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">واقي مرتبة كبير<br>Mattress Prot. Lg</div><div class="pv">1.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">غطاء مرتبة صغير<br>Elastic Cover Sm</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">غطاء مرتبة كبير<br>Elastic Cover Lg</div><div class="pv">3.00</div><div class="pu">ريال</div></div>
+    </div>
+  </div>
+
+  <!-- ستائر وسجاد -->
+  <div class="price-cat">
+    <div class="cat-label">الستائر والسجاد — Curtains & Carpets</div>
+    <div class="price-grid cols3">
+      <div class="p-item"><div class="pn">ستارة صغيرة / قطعة<br>Curtain Small</div><div class="pv">5.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">ستارة كبيرة / قطعة<br>Curtain Large</div><div class="pv">10.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">سجاد بالمتر<br>Carpets / Meter</div><div class="pv">3.60</div><div class="pu">ريال</div></div>
+    </div>
+  </div>
+
+  <!-- ملابس -->
+  <div class="price-cat">
+    <div class="cat-label">الملابس والزي الرسمي — Garments & Uniforms</div>
+    <div class="price-grid cols6">
+      <div class="p-item"><div class="pn">قميص<br>Shirt</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">بنطلون<br>Trouser</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">ثوب<br>Thobes</div><div class="pv">3.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">عباية<br>Abbaya</div><div class="pv">5.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">بدلة (تنظيف جاف)<br>Suit dry clean</div><div class="pv">10.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">رداء طويل<br>Sweater</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+    </div>
+  </div>
+
+  <!-- ملابس مطبخ ومخبر -->
+  <div class="price-cat">
+    <div class="cat-label">زي المطبخ والمختبر — Kitchen & Lab Wear</div>
+    <div class="price-grid cols6">
+      <div class="p-item"><div class="pn">جاكيت طباخ<br>Cook Jacket</div><div class="pv">3.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">بنطلون طباخ<br>Cook Trouser</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">مريلة<br>Apron</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">ربطة عنق طباخ<br>Cook Neck Tie</div><div class="pv">1.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">معطف مختبر<br>Lab Coat</div><div class="pv">1.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">غطاء رأس<br>Caps</div><div class="pv">1.00</div><div class="pu">ريال</div></div>
+    </div>
+  </div>
+
+  <!-- متنوعات -->
+  <div class="price-cat">
+    <div class="cat-label">متنوعات — Miscellaneous</div>
+    <div class="price-grid cols6">
+      <div class="p-item"><div class="pn">شماغ<br>Gotras</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">سروال بنطلون<br>Serwals</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">قميص داخلي<br>Under shirt</div><div class="pv">2.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">ملابس داخلية<br>Under Shorts</div><div class="pv">3.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">منشفة نادي رياضي<br>Gym Towel</div><div class="pv">1.50</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">قطعة قماش نظافة<br>Cleaning Cloth</div><div class="pv">0.50</div><div class="pu">ريال</div></div>
+    </div>
+  </div>
+
+  <!-- علم + سجادة صلاة -->
+  <div class="price-cat">
+    <div class="cat-label">خاص — Special</div>
+    <div class="price-grid cols3">
+      <div class="p-item"><div class="pn">جوارب<br>Socks</div><div class="pv">5.00</div><div class="pu">ريال</div></div>
+      <div class="p-item"><div class="pn">علم<br>Flag</div><div class="pv">1.50</div><div class="pu">ريال</div></div>
+      <div class="p-item" style="border-color:#c8e6c9; background:#f1fbf3;"><div class="pn" style="color:#2e7d32;">سجادة صلاة<br>Prayer Mat</div><div class="pv" style="color:#2e7d32; font-size:13px;">مجاناً</div><div class="pu" style="color:#66bb6a;">For Free</div></div>
+    </div>
+  </div>
+
+  <div class="vat-note">⚠️ الأسعار أعلاه لا تشمل ضريبة القيمة المضافة (VAT not included)</div>
+  <div class="stain-note">🧪 في حال وجود بقع صعبة على القطعة، تتم المعالجة بالمواد الكيميائية المتخصصة وبسعر خاص يُتفق عليه مع إدارة الجهة</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-grid">
+    <div class="qr-blk">
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=tel:0547867270&color=07224a" alt="QR"/>
+      </div>
+      <div class="qr-lbl">امسح للتواصل المباشر</div>
+    </div>
+    <div>
+      <div class="ct-title">تواصل معنا</div>
+      <div class="ct-sub">يسعدنا تقديم عروض مخصصة لمنشأتكم</div>
+      <ul class="ct-list">
+        <li>
+          <div class="ct-ic"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          0547867270 / 0536039000 / 0590774040
+        </li>
+        <li>
+          <div class="ct-ic"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          washingpro.co@gmail.com
+        </li>
+        <li>
+          <div class="ct-ic"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          المدينة المنورة — المملكة العربية السعودية
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <div class="footer-copy">© 2026 Washing Pro Company Limited · جميع الحقوق محفوظة</div>
+    <div class="footer-brand">WASHING PRO</div>
+  </div>
+</div>
+
+</div><!-- end .page -->
+</body>
+</html>
